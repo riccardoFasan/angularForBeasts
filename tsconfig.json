@@ -18,10 +18,12 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ]
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@components/*": ["src/app/shared/components/*"],
+      "@services/*": ["src/app/shared/services/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
