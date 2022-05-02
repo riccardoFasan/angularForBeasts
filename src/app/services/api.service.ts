@@ -1,13 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Dispatcher } from '@app/shared/interfaces/dispatcher.interface';
-import { Post, User } from '@app/shared/models';
 import { map, Observable } from 'rxjs';
+import { Post, User } from '../models';
 
 @Injectable({
   providedIn: 'root',
 })
-export class JsonPlaceholderDispatcher implements Dispatcher {
+export class ApiService {
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from '@app/shared/models';
-import { ApiService } from '@app/shared/services';
+import { User } from '@app/models';
+import { ApiService } from '@app/services';
 import { Observable } from 'rxjs';
 
 @Component({

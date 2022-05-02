@@ -9,7 +9,7 @@ import {
   SharePageComponent,
   SubjectsPageComponent,
   TakePageComponent,
-} from './pages';
+} from '@app/components';
 
 const routes: Routes = [
   {

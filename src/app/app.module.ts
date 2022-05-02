@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/shared.module';
 
 import {
   OperatorsPageComponent,
@@ -14,13 +15,19 @@ import {
   RetryPageComponent,
   TakePageComponent,
   SharePageComponent,
-} from './pages/';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { RouterModule } from '@angular/router';
+  HomePageComponent,
+  CardComponent,
+  HeaderComponent,
+  PageContentComponent,
+} from '@app/components';
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    HeaderComponent,
+    CardComponent,
+
     OperatorsPageComponent,
     SubjectsPageComponent,
     HomePageComponent,
@@ -29,12 +36,15 @@ import { RouterModule } from '@angular/router';
     RetryPageComponent,
     TakePageComponent,
     SharePageComponent,
+
+    PageContentComponent,
   ],
   imports: [
+    CommonModule,
+    RouterModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    SharedModule,
     RouterModule,
     AppRoutingModule,
   ],
