@@ -1,1 +1,22 @@
-<p>operator-page-content works!</p>
+<section class="text-start">
+  <h4 class="card-title">{{ title }}</h4>
+  <div class="row mt-1">
+    <div [ngClass]="relatedItems.length > 0 ? 'col-9' : 'col-12'">
+      <p>{{ text }}</p>
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="relatedItems" class="col-3">
+      <h5>Related</h5>
+      <div class="list-group">
+        <a
+          *ngFor="let item of relatedItems"
+          href="{{ item.url }}"
+          target="_blank"
+          class="list-group-item list-group-item-action"
+        >
+          {{ item.name }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

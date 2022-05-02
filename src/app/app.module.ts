@@ -24,10 +24,8 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-
     HeaderComponent,
     CardComponent,
-
     OperatorsPageComponent,
     SubjectsPageComponent,
     HomePageComponent,
@@ -36,7 +34,6 @@ import {
     RetryPageComponent,
     TakePageComponent,
     SharePageComponent,
-
     PageContentComponent,
   ],
   imports: [
