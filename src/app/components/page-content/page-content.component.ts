@@ -9,7 +9,7 @@ import { RelatedItem } from '@app/models';
 export class PageContentComponent implements OnInit {
   @Input() title!: string;
   @Input() text!: string;
-  @Input() relatedItems: RelatedItem[] = [];
+  @Input() relatedItems?: RelatedItem[];
 
   constructor() {}
 

@@ -11,7 +11,7 @@ export class CombinationPageComponent implements OnInit {
   text: string =
     'Combination operators allow your to merge streams like the Ghostbusters!';
 
-  relatedOperators: RelatedItem[] = [
+  relatedItems: RelatedItem[] = [
     {
       name: 'forkJoin',
       url: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/forkjoin',
