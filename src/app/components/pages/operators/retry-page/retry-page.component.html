@@ -1,1 +1,32 @@
-<app-page-content [title]="title" [text]="text"> </app-page-content>
+<app-page-content [title]="title" [text]="text" [relatedItems]="relatedItems">
+  <div class="accordion" id="accordon" *ngIf="users$ | async as users">
+    <div class="accordion-item" *ngFor="let user of users; index as i">
+      <h2 class="accordion-header" id="heading{{ user.id }}">
+        <button
+          class="accordion-button"
+          type="button"
+          data-bs-toggle="collapse"
+          [attr.data-bs-target]="'#collapse' + user.id"
+          [attr.aria-expanded]="i === 0"
+          [attr.aria-controls]="'collapse' + user.id"
+        >
+          {{ user.name }}
+        </button>
+      </h2>
+      <div
+        id="collapse{{ user.id }}"
+        class="accordion-collapse collapse"
+        [ngClass]="{ ' show': i === 0 }"
+        [attr.aria-labelledby]="'heading' + user.id"
+        data-bs-parent="#accordon"
+      >
+        <div class="accordion-body">
+          <h4>{{ user.company.name }}</h4>
+          <div>
+            <p>{{ user.company.catchPhrase }}<br />{{ user.company.bs }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-page-content>
