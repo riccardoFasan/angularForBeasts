@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
+  CombinationPageComponent,
   HomePageComponent,
+  MappingPageComponent,
   OperatorsPageComponent,
+  RetryPageComponent,
+  SharePageComponent,
   SubjectsPageComponent,
+  TakePageComponent,
 } from './pages';
 
 const routes: Routes = [
@@ -15,6 +20,33 @@ const routes: Routes = [
   {
     path: 'operators',
     component: OperatorsPageComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'combination',
+      },
+      {
+        path: 'combination',
+        component: CombinationPageComponent,
+      },
+      {
+        path: 'mapping',
+        component: MappingPageComponent,
+      },
+      {
+        path: 'retry',
+        component: RetryPageComponent,
+      },
+      {
+        path: 'share',
+        component: SharePageComponent,
+      },
+      {
+        path: 'take',
+        component: TakePageComponent,
+      },
+    ],
   },
   {
     path: 'subjects',

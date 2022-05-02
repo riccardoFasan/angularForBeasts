@@ -6,7 +6,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
-import { OperatorsPageComponent, SubjectsPageComponent } from './pages/';
+import {
+  OperatorsPageComponent,
+  SubjectsPageComponent,
+  CombinationPageComponent,
+  MappingPageComponent,
+  RetryPageComponent,
+  TakePageComponent,
+  SharePageComponent,
+} from './pages/';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 
@@ -16,6 +24,11 @@ import { RouterModule } from '@angular/router';
     OperatorsPageComponent,
     SubjectsPageComponent,
     HomePageComponent,
+    CombinationPageComponent,
+    MappingPageComponent,
+    RetryPageComponent,
+    TakePageComponent,
+    SharePageComponent,
   ],
   imports: [
     BrowserModule,
