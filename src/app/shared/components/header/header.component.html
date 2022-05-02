@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Angular for Beasts</a>
+      <a class="navbar-brand" [routerLink]="['/']">Angular for Beasts</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -13,16 +13,16 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" [routerLink]="['']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" [routerLink]="['operators']">RxJS perators</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" [routerLink]="['subjects']">Subjects</a>
           </li>
         </ul>
       </div>
