@@ -4,6 +4,17 @@
     class="col-12 col-md-6 col-lg-4 col-xl-3 mt-3"
     *ngFor="let user of users"
   >
-    <app-card [user]="user"></app-card>
+    <app-card>
+      <h5 class="card-title pt-1" header>
+        {{ user.firstname }} {{ user.lastname }}
+      </h5>
+      <div class="card-text">
+        <ul class="list-unstyled mb-0">
+          <li>{{ user.companyName }}</li>
+          <li>{{ user.phone }}</li>
+          <li>{{ user.email }}</li>
+        </ul>
+      </div>
+    </app-card>
   </div>
 </div>

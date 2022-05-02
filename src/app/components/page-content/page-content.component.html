@@ -1,14 +1,20 @@
 <section class="text-start">
-  <h4 class="card-title mt-2">{{ title }}</h4>
+  <h2 class="card-title mt-2">{{ title }}</h2>
   <div class="row">
     <div
-      [ngClass]="relatedItems && relatedItems.length > 0 ? 'col-9' : 'col-11'"
+      class="col-12"
+      [ngClass]="
+        relatedItems && relatedItems.length > 0 ? 'col-lg-9' : 'col-lg-11'
+      "
     >
       <p class="mb-2">{{ text }}</p>
       <ng-content></ng-content>
     </div>
-    <div *ngIf="relatedItems && relatedItems.length > 0" class="col-3">
-      <h5>Related</h5>
+    <div
+      *ngIf="relatedItems && relatedItems.length > 0"
+      class="col-12 col-lg-3"
+    >
+      <h5 class="fw-bolder">Related</h5>
       <div class="list-group">
         <a
           *ngFor="let item of relatedItems"
