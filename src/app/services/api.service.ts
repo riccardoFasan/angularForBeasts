@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
-import { Post, User } from '../models';
+import { Observable } from 'rxjs';
+import { Post, User, Comment } from '../models';
 
 @Injectable({
   providedIn: 'root',
@@ -10,36 +10,24 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
-    return this.http
-      .get('https://jsonplaceholder.typicode.com/users')
-      .pipe(map((response: any) => this.mapUsers(response)));
+    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
 
-  getPosts(): Observable<Post[]> {
-    return this.http
-      .get('https://jsonplaceholder.typicode.com/posts')
-      .pipe(map((response: any) => this.mapPosts(response)));
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>(
+      `https://jsonplaceholder.typicode.com/users/${id}`
+    );
   }
 
-  private mapUsers(data: any): User[] {
-    return data.map((user: any) => ({
-      id: user.id,
-      firstname: user.name.split(' ')[0],
-      lastname: user.name.split(' ')[1],
-      username: user.username,
-      email: user.email,
-      phone: user.phone,
-      website: user.website,
-      companyName: user.company.name,
-    }));
+  getPostsOfUser(userId: number): Observable<Post[]> {
+    return this.http.get<Post[]>(
+      `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
+    );
   }
 
-  private mapPosts(data: any): Post[] {
-    return data.map((post: any) => ({
-      userId: post.userId,
-      id: post.id,
-      title: post.title,
-      text: post.body,
-    }));
+  getCommentsOfPost(postId: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(
+      `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
+    );
   }
 }

@@ -6,13 +6,14 @@
   >
     <app-card>
       <h5 class="card-title pt-1" header>
-        {{ user.firstname }} {{ user.lastname }}
+        {{ user.name }}
       </h5>
       <div class="card-text">
         <ul class="list-unstyled mb-0">
-          <li>{{ user.companyName }}</li>
+          <li>{{ user.company.name }}</li>
           <li>{{ user.phone }}</li>
           <li>{{ user.email }}</li>
+          <li>{{ user.address.street }}</li>
         </ul>
       </div>
     </app-card>

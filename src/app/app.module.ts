@@ -21,6 +21,8 @@ import {
   PageContentComponent,
 } from '@app/components';
 
+import { TruncatePipe } from './pipes';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import {
     TakePageComponent,
     SharePageComponent,
     PageContentComponent,
+    TruncatePipe,
   ],
   imports: [
     CommonModule,

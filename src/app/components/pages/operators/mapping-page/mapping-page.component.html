@@ -1,2 +1,35 @@
 <app-page-content [title]="title" [text]="text" [relatedItems]="relatedItems">
+  <form class="mt-2 mb-2 w-75">
+    <label for="search" class="d-inline-block form-label">Type a user id</label>
+    <input
+      class="d-block w-100"
+      type="number"
+      class="form-control"
+      (input)="searchUser(input.value)"
+      id="search"
+      min="1"
+      max="10"
+      #input
+    />
+  </form>
+  <ng-container *ngIf="user$ | async as user">
+    <ng-template #posts>
+      <h4 class="mb-2">Posts of {{ user.name }}</h4>
+      <ul class="list-group w-75">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-start"
+          *ngFor="let post of user.posts"
+        >
+          <!-- TODO: truncate pipe -->
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">{{ post.title | truncate: 50 }}</div>
+            {{ post.body | truncate: 100 }}
+          </div>
+          <span class="badge bg-primary rounded-pill">
+            {{ post.comments.length }} comments
+          </span>
+        </li>
+      </ul>
+    </ng-template>
+  </ng-container>
 </app-page-content>
