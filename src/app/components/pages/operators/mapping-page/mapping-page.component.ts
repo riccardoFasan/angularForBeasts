@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Post, RelatedItem, User } from '@app/models';
 import { ApiService } from '@app/services';
 import {
@@ -17,7 +17,7 @@ import {
   templateUrl: './mapping-page.component.html',
   styleUrls: ['./mapping-page.component.css'],
 })
-export class MappingPageComponent implements OnInit {
+export class MappingPageComponent {
   title: string = 'Higher order mapping';
   text: string =
     'Higher order mapping operators transform each emitted value to an observable. These operators are a solution to avoid nested subscriptions.';
@@ -64,8 +64,6 @@ export class MappingPageComponent implements OnInit {
   );
 
   constructor(private api: ApiService) {}
-
-  ngOnInit(): void {}
 
   selectUser(query: string): void {
     if (!isNaN(parseInt(query))) {

@@ -68,8 +68,6 @@ export class CombinationPageComponent implements OnInit, OnDestroy {
 
   private subsink: SubSink = new SubSink();
 
-  constructor() {}
-
   ngOnInit(): void {
     this.subsink.sink = this.operators$.subscribe();
   }

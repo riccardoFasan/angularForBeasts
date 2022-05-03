@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RelatedItem, ToDo } from '@app/models';
 import { ApiService } from '@app/services';
 import { map, Observable, share } from 'rxjs';
@@ -8,7 +8,7 @@ import { map, Observable, share } from 'rxjs';
   templateUrl: './share-page.component.html',
   styleUrls: ['./share-page.component.css'],
 })
-export class SharePageComponent implements OnInit {
+export class SharePageComponent {
   title: string = 'Hot and cold observables';
   text: string =
     'Observables are "cold" by default, multicasting operators can make them "hot", allowing side-effects sharing among subscribers.';
@@ -40,6 +40,4 @@ export class SharePageComponent implements OnInit {
   );
 
   constructor(private api: ApiService) {}
-
-  ngOnInit(): void {}
 }

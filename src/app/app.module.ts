@@ -19,6 +19,7 @@ import {
   CardComponent,
   HeaderComponent,
   PageContentComponent,
+  SubjectCardComponent,
 } from '@app/components';
 
 import { TruncatePipe } from './pipes';
@@ -38,6 +39,7 @@ import { TruncatePipe } from './pipes';
     SharePageComponent,
     PageContentComponent,
     TruncatePipe,
+    SubjectCardComponent,
   ],
   imports: [
     CommonModule,

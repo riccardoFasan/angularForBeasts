@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RelatedItem } from '@app/models';
 
 @Component({
@@ -6,12 +6,8 @@ import { RelatedItem } from '@app/models';
   templateUrl: './page-content.component.html',
   styleUrls: ['./page-content.component.css'],
 })
-export class PageContentComponent implements OnInit {
+export class PageContentComponent {
   @Input() title!: string;
   @Input() text!: string;
   @Input() relatedItems?: RelatedItem[];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

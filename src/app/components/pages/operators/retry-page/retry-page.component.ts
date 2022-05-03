@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RelatedItem, User } from '@app/models';
 import { BrokenApiService } from '@app/services';
 import { delayWhen, Observable, retry, retryWhen, timer } from 'rxjs';
@@ -8,7 +8,7 @@ import { delayWhen, Observable, retry, retryWhen, timer } from 'rxjs';
   templateUrl: './retry-page.component.html',
   styleUrls: ['./retry-page.component.css'],
 })
-export class RetryPageComponent implements OnInit {
+export class RetryPageComponent {
   title: string = 'retry & retryWhen';
   text: string = 'As you can think: a fanciful retry logic!';
   relatedItems: RelatedItem[] = [
@@ -43,6 +43,4 @@ export class RetryPageComponent implements OnInit {
     ); // * retry vs retryWhen
 
   constructor(private api: BrokenApiService) {}
-
-  ngOnInit(): void {}
 }
