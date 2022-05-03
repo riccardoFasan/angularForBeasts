@@ -1,32 +1,36 @@
 <app-page-content [title]="title" [text]="text" [relatedItems]="relatedItems">
-  <form class="mt-2 mb-2 w-75">
-    <label for="search" class="d-inline-block form-label">Type a user id</label>
-    <input
-      class="d-block w-100"
-      type="number"
-      class="form-control"
-      (input)="searchUser(input.value)"
-      id="search"
-      min="1"
-      max="10"
-      #input
-    />
-  </form>
-  <ng-container *ngIf="user$ | async as user">
-    <h4 class="mb-2">Posts of {{ user.name }}</h4>
-    <ul class="list-group w-75">
-      <li
-        class="list-group-item d-flex justify-content-between align-items-start"
-        *ngFor="let post of user.posts"
+  <ng-container *ngIf="users$ | async as users">
+    <div class="mt-2 mb-5 w-75 form-floating">
+      <select
+        id="floatingSelect"
+        class="d-block form-control form-select"
+        (change)="selectUser(input.value)"
+        id="search"
+        #input
       >
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">{{ post.title | truncate: 50 }}</div>
-          {{ post.body | truncate: 100 }}
-        </div>
-        <span class="badge bg-primary rounded-pill">
-          {{ post.comments.length }} comments
-        </span>
-      </li>
-    </ul>
+        <option hidden disabled selected value></option>
+        <option [value]="user.id" *ngFor="let user of users">
+          {{ user.name }}
+        </option>
+      </select>
+      <label for="search">Select an user</label>
+    </div>
+    <ng-container *ngIf="selected$ | async as user">
+      <h4 class="mb-2">Posts of {{ user.name }}</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-start"
+          *ngFor="let post of user.posts"
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">{{ post.title | truncate: 50 }}</div>
+            {{ post.body | truncate: 100 }}
+          </div>
+          <span class="badge bg-primary rounded-pill">
+            {{ post.comments.length }} comments
+          </span>
+        </li>
+      </ul>
+    </ng-container>
   </ng-container>
 </app-page-content>

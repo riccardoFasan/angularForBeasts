@@ -48,9 +48,11 @@ export class MappingPageComponent implements OnInit {
     },
   ];
 
-  private userId$: Subject<number> = new Subject<number>();
+  users$: Observable<User[]> = this.api.getUsers();
 
-  user$: Observable<any> = this.userId$.pipe(
+  userId$: Subject<number> = new Subject<number>();
+
+  selected$: Observable<any> = this.userId$.pipe(
     switchMap(
       (
         userId // * switchMap vs mergeMap vs concatMap vs exhaustMap
@@ -65,7 +67,7 @@ export class MappingPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  searchUser(query: string): void {
+  selectUser(query: string): void {
     if (!isNaN(parseInt(query))) {
       this.userId$.next(parseInt(query));
     }
