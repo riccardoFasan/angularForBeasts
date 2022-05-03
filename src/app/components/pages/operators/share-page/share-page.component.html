@@ -1,2 +1,23 @@
 <app-page-content [title]="title" [text]="text" [relatedItems]="relatedItems">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h4>My super todo list</h4>
+    <div class="fw-light">
+      <span class="pe-3" *ngIf="completedCount$ | async as completedCount">
+        Completed todos: <b class="fw-bold">{{ completedCount }}</b>
+      </span>
+      <span *ngIf="inProgressCount$ | async as inProgressCount">
+        In progress todos: <b class="fw-bold">{{ inProgressCount }}</b>
+      </span>
+    </div>
+  </div>
+  <ul class="list-group" *ngIf="todos$ | async as todos">
+    <li class="list-group-item" *ngFor="let todo of todos">
+      <input
+        class="form-check-input me-1"
+        type="checkbox"
+        [checked]="todo.completed"
+      />
+      {{ todo.title | truncate: 75 }}
+    </li>
+  </ul>
 </app-page-content>

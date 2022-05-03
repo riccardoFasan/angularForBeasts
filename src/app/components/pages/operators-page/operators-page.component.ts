@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class OperatorsPageComponent implements OnInit {
   pages: { path: string; title: string }[] = [
     { path: 'combination', title: 'combineLatest, zip & forkJoin' },
-    { path: 'mapping', title: 'higher order mapping' },
-    { path: 'retry', title: 'retry & retryWhen' },
-    { path: 'share', title: 'share & shareReplay' },
+    { path: 'mapping', title: 'xxxMap' },
+    { path: 'retry', title: "ther's no try, but ther's retry" },
+    { path: 'share', title: 'sharing is caring' },
     { path: 'take', title: 'take, takeUntil, takeWhat?' },
   ];
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post, User, Comment } from '../models';
+import { Post, User, Comment, ToDo } from '../models';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +16,12 @@ export class ApiService {
   getUser(id: number): Observable<User> {
     return this.http.get<User>(
       `https://jsonplaceholder.typicode.com/users/${id}`
+    );
+  }
+
+  geTodosOfUser(userId: number): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>(
+      `https://jsonplaceholder.typicode.com/todos?&userId=${userId}`
     );
   }
 
