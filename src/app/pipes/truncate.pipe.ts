@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { UtilsService } from '@app/services/utils.service';
 
 @Pipe({
   name: 'truncate',
 })
 export class TruncatePipe implements PipeTransform {
-  transform(text: string, length: number = 25, suffix: string = '...'): string {
-    if (text.length > length) {
-      return text.substring(0, length).trim() + suffix;
-    }
-    return text;
+  constructor(private utils: UtilsService) {}
+
+  transform(text: string, length: number = 25): string {
+    return this.utils.truncate(text, length);
   }
 }

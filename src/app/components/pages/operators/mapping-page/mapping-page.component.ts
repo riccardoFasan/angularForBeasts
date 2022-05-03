@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Post, RelatedItem, User } from '@app/models';
 import { ApiService } from '@app/services';
 import {
@@ -16,6 +16,7 @@ import {
   selector: 'app-mapping-page',
   templateUrl: './mapping-page.component.html',
   styleUrls: ['./mapping-page.component.css'],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MappingPageComponent {
   title: string = 'Higher order mapping';
