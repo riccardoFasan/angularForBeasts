@@ -19,6 +19,13 @@ import {
   styleUrls: ['./subjects-page.component.css'],
 })
 export class SubjectsPageComponent {
+  subjects: { title: string; type: SubjectType }[] = [
+    { title: 'Subject', type: SubjectType.Subject },
+    { title: 'BehaviorSubject', type: SubjectType.BehaviorSubject },
+    { title: 'ReplaySubject', type: SubjectType.ReplaySubject },
+    { title: 'AsyncSubject', type: SubjectType.AsyncSubject },
+  ];
+
   private isCompleted$: Subject<boolean> = new Subject<boolean>();
 
   stream$: Observable<number> = interval(2500).pipe(
@@ -31,13 +38,6 @@ export class SubjectsPageComponent {
       (this.subjets.asyncSubject$ as AsyncSubject<number>).next(value);
     })
   );
-
-  subjects: { title: string; type: SubjectType }[] = [
-    { title: 'Subject', type: SubjectType.Subject },
-    { title: 'BehaviorSubject', type: SubjectType.BehaviorSubject },
-    { title: 'ReplaySubject', type: SubjectType.ReplaySubject },
-    { title: 'AsyncSubject', type: SubjectType.AsyncSubject },
-  ];
 
   constructor(private subjets: SubjectsService) {}
 
