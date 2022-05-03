@@ -1,2 +1,17 @@
 <app-page-content [title]="title" [text]="text" [relatedItems]="relatedItems">
+  <ng-container *ngIf="timer$ | async as timer">
+    <div class="mb-3 fs-5">
+      Timer:
+      <b>
+        {{ timer }}
+      </b>
+    </div>
+    <button
+      class="btn btn-primary"
+      [disabled]="stopped$ | async"
+      (click)="stop()"
+    >
+      Stop timer
+    </button>
+  </ng-container>
 </app-page-content>

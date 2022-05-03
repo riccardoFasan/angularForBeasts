@@ -9,7 +9,7 @@ export class OperatorsPageComponent implements OnInit {
   pages: { path: string; title: string }[] = [
     { path: 'combination', title: 'combineLatest, zip & forkJoin' },
     { path: 'mapping', title: 'xxxMap' },
-    { path: 'retry', title: "ther's no try, but ther's retry" },
+    { path: 'retry', title: "ther's no try, ther's retry" },
     { path: 'share', title: 'sharing is caring' },
     { path: 'take', title: 'take, takeUntil, takeWhat?' },
   ];
