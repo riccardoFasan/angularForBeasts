@@ -1,7 +1,7 @@
 <app-page-wrapper [relatedItems]="relatedItems">
   <div header>
     <h2 class="card-title">{{ title }}</h2>
-    <p class="mb-5 w-75">{{ text }}</p>
+    <p>{{ text }}</p>
   </div>
   <div class="accordion" id="accordon" *ngIf="users$ | async as users" body>
     <div class="accordion-item" *ngFor="let user of users; index as i">

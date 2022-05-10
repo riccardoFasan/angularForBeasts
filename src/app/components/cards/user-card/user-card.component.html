@@ -1,0 +1,10 @@
+<app-card-wrapper [title]="user.name">
+  <div class="card-text">
+    <ul class="list-unstyled mb-0">
+      <li>{{ user.company.name }}</li>
+      <li>{{ user.phone }}</li>
+      <li>{{ user.email }}</li>
+      <li>{{ user.address.street }}</li>
+    </ul>
+  </div>
+</app-card-wrapper>

@@ -6,7 +6,9 @@
         relatedItems && relatedItems.length > 0 ? 'col-md-9' : 'col-md-11'
       "
     >
-      <ng-content select="[header]"></ng-content>
+      <div class="mb-5 w-75">
+        <ng-content select="[header]"></ng-content>
+      </div>
       <ng-content select="[body]"></ng-content>
     </div>
     <div

@@ -20,6 +20,7 @@ import {
   HeaderComponent,
   PageWrapperComponent,
   SubjectCardComponent,
+  UserCardComponent,
 } from '@app/components';
 
 import { TruncatePipe } from './pipes';
@@ -40,6 +41,7 @@ import { TruncatePipe } from './pipes';
     PageWrapperComponent,
     TruncatePipe,
     SubjectCardComponent,
+    UserCardComponent,
   ],
   imports: [
     CommonModule,

@@ -1,13 +1,11 @@
-<app-card-wrapper class="col-3" [title]="title">
-  <div>
-    <button class="btn btn-primary btn-sm" (click)="start()">Subscribe</button>
-    <div class="card-text mt-2" *ngIf="values.length > 0">
-      Values
-      <ul class="unstyled-list">
-        <li *ngFor="let value of values">
-          {{ value }}
-        </li>
-      </ul>
-    </div>
+<app-card-wrapper [title]="title">
+  <button class="btn btn-primary btn-sm" (click)="start()">Subscribe</button>
+  <div class="card-text mt-2" *ngIf="values.length > 0">
+    Values:
+    <ul class="unstyled-list">
+      <li *ngFor="let value of values">
+        {{ value }}
+      </li>
+    </ul>
   </div>
 </app-card-wrapper>

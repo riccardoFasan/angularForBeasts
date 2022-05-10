@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Post, RelatedItem, User } from '@app/models';
 import { ApiService } from '@app/services';
+import { UtilsService } from '@app/services/utils.service';
 import {
   concatMap,
   exhaustMap,
@@ -10,6 +11,7 @@ import {
   Observable,
   Subject,
   switchMap,
+  tap,
 } from 'rxjs';
 
 @Component({
@@ -19,6 +21,7 @@ import {
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MappingPageComponent {
+  //  implements OnInit
   title: string = 'Higher order mapping';
   text: string =
     'Higher order mapping operators transform each emitted value to an observable. These operators are a solution to avoid nested subscriptions.';
@@ -64,7 +67,11 @@ export class MappingPageComponent {
     )
   );
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private utils: UtilsService) {}
+
+  truncate(text: string, length: number = 25): string {
+    return this.utils.truncate(text, length);
+  }
 
   selectUser(query: string): void {
     if (!isNaN(parseInt(query))) {
@@ -88,4 +95,17 @@ export class MappingPageComponent {
       )
     );
   }
+
+  // ngOnInit(): void {
+  //   this.changeTitle();
+  // }
+
+  // private changeTitle(index: number = 0): void {
+  //   setTimeout(() => {
+  //     if (this.relatedItems[index]) {
+  //       this.title = this.relatedItems[index].name;
+  //       this.changeTitle(index + 1);
+  //     }
+  //   }, 1500);
+  // }
 }
