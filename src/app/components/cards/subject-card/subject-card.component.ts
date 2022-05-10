@@ -1,4 +1,4 @@
-import { Attribute, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { SubjectType } from '@app/enums';
 import { SubjectsService } from '@app/services';
 import { Observable, tap } from 'rxjs';

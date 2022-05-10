@@ -16,9 +16,9 @@ import {
   TakePageComponent,
   SharePageComponent,
   HomePageComponent,
-  CardComponent,
+  CardWrapperComponent,
   HeaderComponent,
-  PageContentComponent,
+  PageWrapperComponent,
   SubjectCardComponent,
 } from '@app/components';
 
@@ -28,7 +28,7 @@ import { TruncatePipe } from './pipes';
   declarations: [
     AppComponent,
     HeaderComponent,
-    CardComponent,
+    CardWrapperComponent,
     OperatorsPageComponent,
     SubjectsPageComponent,
     HomePageComponent,
@@ -37,7 +37,7 @@ import { TruncatePipe } from './pipes';
     RetryPageComponent,
     TakePageComponent,
     SharePageComponent,
-    PageContentComponent,
+    PageWrapperComponent,
     TruncatePipe,
     SubjectCardComponent,
   ],

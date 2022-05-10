@@ -10,7 +10,7 @@ import { SubSink } from 'subsink';
 export class CombinationPageComponent implements OnInit, OnDestroy {
   title: string = 'Combination operators';
   text: string =
-    'Combination operators allow your to merge streams like the Ghostbusters!';
+    'Combination operators allow you to merge streams like the Ghostbusters!';
 
   relatedItems: RelatedItem[] = [
     {

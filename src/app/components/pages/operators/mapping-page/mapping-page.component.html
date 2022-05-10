@@ -1,8 +1,11 @@
-<app-page-content [title]="title" [text]="text" [relatedItems]="relatedItems">
-  <ng-container *ngIf="users$ | async as users">
+<app-page-wrapper [relatedItems]="relatedItems">
+  <div header>
+    <h2 class="card-title">{{ title }}</h2>
+    <p class="mb-5 w-75">{{ text }}</p>
+  </div>
+  <ng-container *ngIf="users$ | async as users" body>
     <div class="mt-2 mb-5 w-75 form-floating">
       <select
-        id="floatingSelect"
         class="d-block form-control form-select"
         (change)="selectUser(input.value)"
         id="search"
@@ -33,4 +36,4 @@
       </ul>
     </ng-container>
   </ng-container>
-</app-page-content>
+</app-page-wrapper>

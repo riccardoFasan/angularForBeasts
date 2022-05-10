@@ -6,9 +6,8 @@
         relatedItems && relatedItems.length > 0 ? 'col-md-9' : 'col-md-11'
       "
     >
-      <h2 class="card-title">{{ title }}</h2>
-      <p class="mb-5 w-75">{{ text }}</p>
-      <ng-content></ng-content>
+      <ng-content select="[header]"></ng-content>
+      <ng-content select="[body]"></ng-content>
     </div>
     <div
       *ngIf="relatedItems && relatedItems.length > 0"

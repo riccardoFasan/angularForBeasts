@@ -4,7 +4,7 @@
     class="col-12 col-md-6 col-lg-4 col-xl-3 mt-3"
     *ngFor="let user of users"
   >
-    <app-card>
+    <app-card-wrapper>
       <h5 class="card-title pt-1" header>
         {{ user.name }}
       </h5>
@@ -16,6 +16,6 @@
           <li>{{ user.address.street }}</li>
         </ul>
       </div>
-    </app-card>
+    </app-card-wrapper>
   </div>
 </div>

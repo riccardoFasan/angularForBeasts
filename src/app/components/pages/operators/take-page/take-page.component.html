@@ -1,5 +1,9 @@
-<app-page-content [title]="title" [text]="text" [relatedItems]="relatedItems">
-  <ng-container *ngIf="timer$ | async as timer">
+<app-page-wrapper [relatedItems]="relatedItems">
+  <div header>
+    <h2 class="card-title">{{ title }}</h2>
+    <p class="mb-5 w-75">{{ text }}</p>
+  </div>
+  <ng-container *ngIf="timer$ | async as timer" body>
     <div class="mb-3 fs-5">
       Timer:
       <b>
@@ -14,4 +18,4 @@
       Stop timer
     </button>
   </ng-container>
-</app-page-content>
+</app-page-wrapper>

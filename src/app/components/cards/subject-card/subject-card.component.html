@@ -1,5 +1,4 @@
-<app-card class="col-3">
-  <h5 class="card-title pt-1" header>{{ title }}</h5>
+<app-card-wrapper class="col-3" [title]="title">
   <div>
     <button class="btn btn-primary btn-sm" (click)="start()">Subscribe</button>
     <div class="card-text mt-2" *ngIf="values.length > 0">
@@ -11,4 +10,4 @@
       </ul>
     </div>
   </div>
-</app-card>
+</app-card-wrapper>
