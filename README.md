@@ -12,4 +12,4 @@ A simple Angular project used for some lessons for infoFactory Srl about:
 - Working of HttpClient/HttpBackend and uses of http interceptors (caching, auth & more)
 - Component comunications via an event bus (Mediator pattern)
 
-| Not all of this arguments are in this repo.
+> INFO: Not all of this arguments are in this repo.
