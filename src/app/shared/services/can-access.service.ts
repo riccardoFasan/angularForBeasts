@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class OperatorsGuard implements CanActivate {
+export class CanAccessService {
   constructor(private router: Router) {}
 
-  canActivate(): Observable<boolean> {
+  canAccess(): Observable<boolean> {
     const canActivate: boolean = confirm(
       'Do you want to see the operators page?'
     );
