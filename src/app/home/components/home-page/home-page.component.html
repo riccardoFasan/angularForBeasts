@@ -1,8 +1,18 @@
-<h1>These guys are here just for fill the page, LOL.</h1>
-<div class="mt-4 row" *ngIf="users$ | async as users">
-  <app-user-card
-    *ngFor="let user of users"
-    [user]="user"
-    class="col-12 col-md-6 col-lg-4 col-xl-3 mt-3"
-  ></app-user-card>
-</div>
+<app-carousel></app-carousel>
+<main class="d-flex justify-content-center mt-5 mb-5">
+  <div class="container-xxl" *ngIf="users$ | async as users">
+    <section class="mt-2 mb-5">
+      <app-album-selector [users]="users"></app-album-selector>
+    </section>
+    <section>
+      <h2>These guys are here just for fill the page, LOL.</h2>
+      <div class="mt-4 row">
+        <app-user-card
+          *ngFor="let user of users"
+          [user]="user"
+          class="col-12 col-md-6 col-lg-4 col-xl-3 mt-3"
+        ></app-user-card>
+      </div>
+    </section>
+  </div>
+</main>

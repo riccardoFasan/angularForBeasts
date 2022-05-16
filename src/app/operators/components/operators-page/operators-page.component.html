@@ -1,23 +1,27 @@
-<h1>RxJS operators</h1>
-<p>
-  Observables are like a water <b>stream</b>, using the right operators you can
-  control the stream flow. <br />
-  The combination of some operators is also called <b>pipeline</b>.
-</p>
-<div class="mt-4 card text-center">
-  <div class="card-header">
-    <ul class="nav nav-pills card-header-pills">
-      <li class="nav-item" *ngFor="let page of pages">
-        <a
-          class="nav-link"
-          [routerLinkActive]="'active'"
-          [routerLink]="[page.path]"
-          >{{ page.title }}</a
-        >
-      </li>
-    </ul>
-  </div>
-  <div class="card-body">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<main class="d-flex justify-content-center mt-5 mb-5">
+  <section class="container-xxl">
+    <h1>RxJS operators</h1>
+    <p>
+      Observables are like a water <b>stream</b>, using the right operators you
+      can control the stream flow. <br />
+      The combination of some operators is also called <b>pipeline</b>.
+    </p>
+    <div class="mt-4 card text-center">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item" *ngFor="let page of pages">
+            <a
+              class="nav-link"
+              [routerLinkActive]="'active'"
+              [routerLink]="[page.path]"
+              >{{ page.title }}</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </section>
+</main>

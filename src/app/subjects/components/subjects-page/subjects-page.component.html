@@ -1,23 +1,31 @@
-<h1>Fantastic subjects and where to find them</h1>
-<p>
-  The Subjects are special observable which acts as both observer and
-  observable. <br />There are four type of subjects: <b>Subject</b>,
-  <b>BehaviorSubject</b>, <b>ReplaySubject</b> and <b>AsyncSubject</b>. <br />
-  All these subjects are hot observables.
-</p>
-<div class="mt-4" *ngIf="stream$ | async as value">
-  <div class="row mt-5">
-    <p class="fs-5 mb-4">
-      Global value: <b>{{ value }}</b>
-      <button class="ms-5 btn btn-outline-danger btn-sm" (click)="complete()">
-        Complete
-      </button>
+<main class="d-flex justify-content-center mt-5 mb-5">
+  <section class="container-xxl">
+    <h1>Fantastic subjects and where to find them</h1>
+    <p>
+      The Subjects are special observable which acts as both observer and
+      observable. <br />There are four type of subjects: <b>Subject</b>,
+      <b>BehaviorSubject</b>, <b>ReplaySubject</b> and <b>AsyncSubject</b>.
+      <br />
+      All these subjects are hot observables.
     </p>
-    <app-subject-card
-      *ngFor="let subject of subjects"
-      [title]="subject.title"
-      [type]="subject.type"
-      class="col-3"
-    ></app-subject-card>
-  </div>
-</div>
+    <div class="mt-4" *ngIf="stream$ | async as value">
+      <div class="row mt-5">
+        <p class="fs-5 mb-4">
+          Global value: <b>{{ value }}</b>
+          <button
+            class="ms-5 btn btn-outline-danger btn-sm"
+            (click)="complete()"
+          >
+            Complete
+          </button>
+        </p>
+        <app-subject-card
+          *ngFor="let subject of subjects"
+          [title]="subject.title"
+          [type]="subject.type"
+          class="col-3"
+        ></app-subject-card>
+      </div>
+    </div>
+  </section>
+</main>

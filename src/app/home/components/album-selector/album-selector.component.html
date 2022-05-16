@@ -1,0 +1,25 @@
+<div class="input-group">
+  <select [formControl]="userControl" class="form-select">
+    <option *ngFor="let user of users" [value]="user.id">
+      {{ user.name }}
+    </option>
+  </select>
+  <select [formControl]="albumControl" class="form-select">
+    <option hidden selected disabled value></option>
+    <ng-container *ngIf="albums$ | async as albums">
+      <option *ngFor="let album of albums" [value]="album.id">
+        {{ album.title }}
+      </option>
+    </ng-container>
+  </select>
+  <button
+    [disabled]="
+      userControl.errors || albumControl.errors || albumControl.disabled
+    "
+    class="btn btn-primary"
+    type="button"
+    (click)="loadAlbum()"
+  >
+    Load album
+  </button>
+</div>
