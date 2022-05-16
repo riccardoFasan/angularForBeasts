@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EventName } from '@app/shared/enums/event-name.enum';
 import { Photo } from '@app/shared/models';
 import { ApiService, EventBusService } from '@app/shared/services';
-import { BehaviorSubject, Observable, Subject, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, switchMap } from 'rxjs';
 import { SubSink } from 'subsink';
 
 @Component({
@@ -12,11 +12,11 @@ import { SubSink } from 'subsink';
 })
 export class CarouselComponent implements OnInit, OnDestroy {
   private readonly defaultAlbum: number = 1;
-  private album: BehaviorSubject<number> = new BehaviorSubject<number>(
+  private album$: BehaviorSubject<number> = new BehaviorSubject<number>(
     this.defaultAlbum
   );
 
-  photos$: Observable<Photo[]> = this.album.pipe(
+  photos$: Observable<Photo[]> = this.album$.pipe(
     switchMap((id: number) => this.api.getPhotosOfAlbum(id))
   );
 
@@ -26,7 +26,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subSink.sink = this.bus.on(EventName.AlbumLoaded, (value: number) => {
-      this.album.next(value);
+      this.album$.next(value);
     });
   }
 
