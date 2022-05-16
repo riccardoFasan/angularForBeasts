@@ -1,16 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {
-  CombinationPageComponent,
-  HomePageComponent,
-  MappingPageComponent,
-  OperatorsPageComponent,
-  RetryPageComponent,
-  SharePageComponent,
-  SubjectsPageComponent,
-  TakePageComponent,
-} from '@app/components';
-import { OperatorsGuard } from './guards';
 
 const routes: Routes = [
   {
@@ -20,43 +9,23 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomePageComponent,
+    loadChildren: () =>
+      import('./home/home.module').then((module) => module.HomeModule),
   },
   {
     path: 'operators',
-    component: OperatorsPageComponent,
     // canActivate: [OperatorsGuard],
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'combination',
-      },
-      {
-        path: 'combination',
-        component: CombinationPageComponent,
-      },
-      {
-        path: 'mapping',
-        component: MappingPageComponent,
-      },
-      {
-        path: 'retry',
-        component: RetryPageComponent,
-      },
-      {
-        path: 'share',
-        component: SharePageComponent,
-      },
-      {
-        path: 'take',
-        component: TakePageComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./operators/operators.module').then(
+        (module) => module.OperatorsModule
+      ),
   },
   {
     path: 'subjects',
-    component: SubjectsPageComponent,
+    loadChildren: () =>
+      import('./subjects/subjects.module').then(
+        (module) => module.SubjectsModule
+      ),
   },
 ];
 
