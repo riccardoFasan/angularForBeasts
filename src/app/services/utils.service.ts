@@ -7,7 +7,7 @@ export class UtilsService {
   constructor() {}
 
   truncate(text: string, length: number = 25, suffix: string = '...'): string {
-    // console.count(text);
+    console.count(text);
     if (text.length > length) {
       return text.substring(0, length).trim() + suffix;
     }

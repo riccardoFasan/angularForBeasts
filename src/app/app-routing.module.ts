@@ -10,6 +10,7 @@ import {
   SubjectsPageComponent,
   TakePageComponent,
 } from '@app/components';
+import { OperatorsGuard } from './guards';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
   {
     path: 'operators',
     component: OperatorsPageComponent,
+    // canActivate: [OperatorsGuard],
     children: [
       {
         path: '',

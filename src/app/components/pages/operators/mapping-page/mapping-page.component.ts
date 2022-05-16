@@ -53,7 +53,6 @@ export class MappingPageComponent {
   ];
 
   users$: Observable<User[]> = this.api.getUsers();
-
   userId$: Subject<number> = new Subject<number>();
 
   selected$: Observable<any> = this.userId$.pipe(
@@ -95,17 +94,4 @@ export class MappingPageComponent {
       )
     );
   }
-
-  // ngOnInit(): void {
-  //   this.changeTitle();
-  // }
-
-  // private changeTitle(index: number = 0): void {
-  //   setTimeout(() => {
-  //     if (this.relatedItems[index]) {
-  //       this.title = this.relatedItems[index].name;
-  //       this.changeTitle(index + 1);
-  //     }
-  //   }, 1500);
-  // }
 }

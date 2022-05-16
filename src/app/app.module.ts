@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -24,6 +24,8 @@ import {
 } from '@app/components';
 
 import { TruncatePipe } from './pipes';
+
+import { AuthInterceptor, CacheInterceptor } from './interceptors';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,18 @@ import { TruncatePipe } from './pipes';
     RouterModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   multi: true,
+    //   useClass: CacheInterceptor,
+    // },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   multi: true,
+    //   useClass: AuthInterceptor,
+    // },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
